@@ -84,7 +84,10 @@
                 <div class="logo">
                     <a href="#"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
                 <ul class="nav-links">
-                    <li><a href="./index_prepare.html" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
+                    <li><a href="./index_prepare.html" target="_blank" onclick="gtag('event', 'cta_click', {
+                        event_category: 'CTA',
+                        event_label: 'DS Competitions'
+                      });" id="ds-competition-cta">DS Competitions</a></li>
                     <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
                     <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
                     <!-- <li><a href="#testimonials" id="testimonials-cta">先輩の声</a></li> -->
