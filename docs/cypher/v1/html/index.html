@@ -353,20 +353,33 @@
             });
         }
     
-        // 例2: IDが "ctaButtonDocumentRequest" のボタンのクリックを追跡
-        var documentButton = document.getElementById('ctaButtonDocumentRequest');
+        var documentButton = document.getElementById('events-cta');
         if (documentButton) {
             documentButton.addEventListener('click', function() {
                 gtag('event', 'cta_click', {
                     'event_category': 'CTA',
-                    'event_label': '資料請求ボタンクリック',
+                    'event_label': 'Events',
                     'button_text': this.innerText
                 });
-                console.log('GA Event: cta_click - 資料請求ボタンクリック'); // デバッグ用
+                console.log('GA Event: cta_click - Events'); // デバッグ用
             });
         }
     
         // 他のCTAボタンがあれば同様に追加
+    
+        var documentButton = document.getElementById('lad-cta');
+            if (documentButton) {
+                documentButton.addEventListener('click', function() {
+                    gtag('event', 'cta_click', {
+                        'event_category': 'CTA',
+                        'event_label': 'LAD',
+                        'button_text': this.innerText
+                    });
+                    console.log('GA Event: cta_click - LAD'); // デバッグ用
+                });
+            }
+        
+            // 他のCTAボタンがあれば同様に追加
     });
     </script>
 
