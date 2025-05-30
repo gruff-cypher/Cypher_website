@@ -53,13 +53,12 @@
         <div class="container">
             <nav class="global-nav">
                 <div class="logo">
-                    <a href="./index.html"><img src="../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
+                    <a href="./index.html" id="nav-logo-cta"><img src="../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
                 <ul class="nav-links">
-                    <li><a href="#three-values">CYPHERの価値</a></li>
-                    <li><a href="https://www.gruff.co.jp/" target="_blank">DS Competition</a></li>
+                    <li><a href="#three-values" id="core-values-lad-cta">CYPHERの価値</a></li>
+                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="ds-competition-cta">DS Competition</a></li>
                     <li><a href="https://www.gruff.co.jp/" target="_blank">Events</a></li>
                     <li><a href="https://www.gruff.co.jp/product/" target="_blank">LAD</a></li>
-                    <li><a href="#testimonials">先輩の声</a></li>
                     <li><a href="https://www.gruff.co.jp/" target="_blank">About Us</a></li> 
                     <li><a href="#faq-section">FAQ</a></li>
                 </ul>
@@ -111,5 +110,203 @@
 </body>
 
 
-</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // 例1: IDが "ds-competition-cta" のボタンのクリックを追跡
+      var applyButton = document.getElementById('ds-competition-cta');
+      if (applyButton) {
+          applyButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', { // GA4に送信するイベント名
+                  'event_category': 'CTA',         // イベントのカテゴリ（任意）
+                  'event_label': 'DS Competitions_by_nav', // イベントのラベル（任意）
+                  'button_text': this.innerText,   // クリックされたボタンのテキスト [cite: 13]
+                  'link_url': this.href            // リンク先URL (aタグの場合)
+              });
+              console.log('GA Event: cta_click - DS Competitions'); // デバッグ用
+          });
+      }
+  
+      var documentButton = document.getElementById('events-cta');
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Events_by_nav',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Events'); // デバッグ用
+          });
+      }
+  
+      // 他のCTAボタンがあれば同様に追加
+  
+      var documentButton = document.getElementById('lad-cta');
+          if (documentButton) {
+              documentButton.addEventListener('click', function() {
+                  gtag('event', 'cta_click', {
+                      'event_category': 'CTA',
+                      'event_label': 'LAD_by_nav',
+                      'button_text': this.innerText
+                  });
+                  console.log('GA Event: cta_click - LAD_by_nav'); // デバッグ用
+              });
+          }
+      
+      var documentButton = document.getElementById('about-us-cta');
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'About Us_by_nav',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - About Us'); // デバッグ用
+          });
+      }
+  
+      var documentButton = document.getElementById('nav-apply-cta');
+          if (documentButton) {
+              documentButton.addEventListener('click', function() {
+                  gtag('event', 'cta_click', {
+                      'event_category': 'CTA',
+                      'event_label': 'Apply_by_nav',
+                      'button_text': this.innerText
+                  });
+                  console.log('GA Event: cta_click - Apply_by_nav'); // デバッグ用
+              });
+          }
+      
+      var documentButton = document.getElementById('intro-entry-cta');
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Apply_by_Intro',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Apply_by_Intro'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('footer-entry-button');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Apply_by_Footer',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Apply_by_Footer'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('core-values-lad-cta');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'LAD_by_Core_Values',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - LAD_by_Core_Values'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('fixed-cta-circle-cta');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Apply_by_Fixed_CTA_Circle',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Apply_by_Fixed_CTA_Circle'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('nav-logo-cta');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Logo_by_nav',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('nav-logo-cta');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Logo_by_nav',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+          });
+
+      var documentButton = document.getElementById('nav-logo-cta');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Logo_by_nav',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+          });
+      }
+      }
+
+      var documentButton = document.getElementById('question1');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Question1_by_FAQ',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Question1_by_FAQ'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('question2');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Question2_by_FAQ',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Question2_by_FAQ'); // デバッグ用
+          });
+      }
+
+      var documentButton = document.getElementById('question3');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Question3_by_FAQ',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Question3_by_FAQ'); // デバッグ用
+          });
+      }   
+
+      var documentButton = document.getElementById('question4');   
+      if (documentButton) {
+          documentButton.addEventListener('click', function() {
+              gtag('event', 'cta_click', {
+                  'event_category': 'CTA',
+                  'event_label': 'Question4_by_FAQ',
+                  'button_text': this.innerText
+              });
+              console.log('GA Event: cta_click - Question4_by_FAQ'); // デバッグ用
+          });
+      }   
+  });
+  </script>
 </html>
