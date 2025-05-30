@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypher - LADについて</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style_LAD.css">
+</head>
+
+<script>
+    // 1. FAQの開閉（既存の処理）
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', event => {
+        const faqItem = item.closest('.faq-item');
+        faqItem.classList.toggle('active');
+      });
+    });
+  
+   // 読み込み直後に .scrollin を遅れて付ける（ここが重要！）
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        if (el.closest(".hero-section")) {
+          el.classList.add("scrollin");
+        }
+      });
+    }, 200); // ←100msだけ遅らせることでtransitionが効く
+  });
+  
+    // 3. スクロール時に後続の要素にフェードインさせる
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("scrollin");
+        }
+      });
+    });
+  </script>
+
+<body>
+    <header class="global-nav-header">
+        <div class="container">
+            <nav class="global-nav">
+                <div class="logo">
+                    <a href="./index_LP.html"><img src="../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
+                <ul class="nav-links">
+                    <li><a href="#three-values">CYPHERの価値</a></li>
+                    <li><a href="https://www.gruff.co.jp/" target="_blank">DS Competition</a></li>
+                    <li><a href="https://www.gruff.co.jp/" target="_blank">Events</a></li>
+                    <li><a href="https://www.gruff.co.jp/product/" target="_blank">LAD</a></li>
+                    <li><a href="#testimonials">先輩の声</a></li>
+                    <li><a href="https://www.gruff.co.jp/" target="_blank">About Us</a></li> 
+                    <li><a href="#faq-section">FAQ</a></li>
+                </ul>
+                <a href="https://www.gruff.co.jp/" target="_blank" class="nav-cta-button">応募する</a> </nav>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero-section fade-in fadein-bottom">
+        <div class="container">
+            <h1 class="text-center fade-in fadein-bottom">LAD<br>ビジネス向けデータサイエンスの正統教育へ</h1>
+        </div>
+    </section>
+
+    <section class="core-triangle fade-in fadein-bottom">
+      <div class="circle circle-top">
+          <h2>Cypher会員は無料</h2>
+          <p>詳細文を入れる</p>
+      </div>
+      <div class="circle circle-left">
+          <h2>認定資格</h2>
+          <p>詳細文を入れる</p>
+      </div>
+      <div class="circle circle-right">
+          <h2>実務特化</h2>
+          <p>詳細文を入れる</p>
+      </div>
+  </section>
+
+  <section id="cta-form" class="hero-section" style="background-color: #f8f9fa;">
+    <div class="container">
+        <h2 class="text-center" style="color: #444;">あなたのデータサイエンティストとしての未来を、CYPHERで築きませんか？</h2>
+        <p class="text-center" style="font-size: 1.2em; color: #444;">一期生として、ここでしか得られない実践的な経験と仲間との出会いを掴みましょう。</p>
+        <div class="text-center">
+            <a href="https://www.gruff.co.jp/" target="_blank" class="button cta-button" style="background-color: #6689A4;">今すぐエントリーする！</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 株式会社グラフ. All rights reserved.</p>
+    </div>
+</footer>
+
+<a href="https://www.gruff.co.jp/" target="_blank" class="fixed-cta-circle">
+  応募する
+</a>
+</body>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYPHER</title>
+    <!--GA関連-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!--ここにGAのIDを入れる-->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');//ここにGAのIDを入れる
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style_LP.css">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. FAQの開閉処理
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const faqItem = item.closest('.faq-item');
+            if (faqItem) { // faqItemが正しく取得できたか確認
+                faqItem.classList.toggle('active');
+            }
+        });
+    });
+
+    // 他のDOMContentLoaded内で行いたい処理があればここに追加
+    // 例: 読み込み直後に .scrollin を遅れて付ける処理など
+    setTimeout(() => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        if (el.closest(".hero-section")) { // 対象セクションを追加・変更
+          el.classList.add("scrollin");
+        }
+      });
+    }, 200);
+    });
+
+    // スクロール時の処理はDOMContentLoadedの外でもOKな場合が多いですが、
+    // 一貫性のために中に入れても良いでしょう。
+    window.addEventListener("scroll", () => {
+        document.querySelectorAll(".fade-in").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("scrollin");
+            }
+        });
+    });
+    // 3. スクロール時に後続の要素にフェードインさせる
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("scrollin");
+        }
+      });
+    });
+
+  </script>
+    
+<body>
+
+    <header class="global-nav-header">
+        <div class="container">
+            <nav class="global-nav">
+                <div class="logo">
+                    <a href="#"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
+                <ul class="nav-links">
+                    <li><a href="./index_prepare.html" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
+                    <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
+                    <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
+                    <!-- <li><a href="#testimonials" id="testimonials-cta">先輩の声</a></li> -->
+                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li> 
+                    <li><a href="#faq-section" id="faq-section-cta">FAQ</a></li>
+                </ul>
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a> </nav>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section fade-in fadein-bottom">
+        <h1>現在準備中です</h1>
+        <h1>公開までしばらくお待ちください</h1>
+    </section>

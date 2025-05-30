@@ -1,0 +1,371 @@
+/* Global Navigation Styles */
+.global-nav-header {
+    background-color: #ffffff; /* 白背景 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 20px ;
+    position: sticky; /* スクロールしても追従 */
+    top: 0;
+    z-index: 1000; /* 他の要素より手前に表示 */
+}
+
+.global-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.global-nav .logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50; /* ダークな色合い */
+    text-decoration: none;
+}
+
+.global-nav .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px; /* 項目間のスペース */
+}
+
+.global-nav .nav-links li a {
+    color: #555;
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.global-nav .nav-links li a:hover {
+    color: #A48166; /* ホバー時の色 */
+    text-decoration: none;
+}
+
+/* ホバー時の下線アニメーション */
+.global-nav .nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #A48166;
+    transition: width 0.3s ease;
+}
+
+.global-nav .nav-links li a:hover::after {
+    width: 100%;
+}
+
+.global-nav .nav-cta-button {
+    background-color: #6689A4; /* メインCTAボタンの色 */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.global-nav .nav-cta-button:hover {
+    background-color: #6689A4;
+    transform: scale(1.05);   /* ホバー時に少し拡大 */
+    text-decoration: none;
+    color: white;
+}
+
+/* レスポンシブ対応 (簡易版) */
+@media (max-width: 768px) {
+    .global-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .global-nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+        display: none; /* 初期状態では非表示 (ハンバーガーメニュー用) */
+    }
+
+    .global-nav .nav-links.active {
+        display: flex; /* アクティブ時に表示 */
+    }
+
+    .global-nav .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .global-nav .nav-cta-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /* ハンバーガーメニューアイコン (JavaScriptで制御) */
+    .menu-toggle {
+        display: block; /* モバイルで表示 */
+        font-size: 2em;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+p {
+    margin-bottom: 15px;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.button {
+    display: inline-block;
+    background-color: #6689A4;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #6689A4;
+    transform: scale(1.05);   /* ホバー時に少し拡大 */
+    text-decoration: none;
+    color: white;
+}
+.text-center {s
+    text-align: center;
+}
+.section-spacing {
+    padding: 60px 0;
+}
+
+/* Header - First Impression */
+/* .hero-section {
+    background-color: #e9f7ff;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+} */
+
+
+
+/*hero-section*/
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 250px 0;
+    color: white;
+    text-align: center;
+  }
+
+.hero-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #555;
+}
+.hero-section h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.hero-section .cta-button {
+    background-color: #ff6f61;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    animation: pulse 2s infinite;
+}
+.hero-section .cta-button:hover {
+    background-color: #e65c50;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* LAD-section */
+.LAD-section {
+    background-image: url("../../data/LAD_section.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+}
+
+.LAD-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* core-triangle */
+.core-triangle {
+    position: relative;
+    width: 1350px;
+    height: 800px;
+    margin: 100px auto;
+    margin-top: auto; /* 負の値を設定して上に移動させる。値は調整してください。 */
+    margin-bottom: auto; /* 下方向のmarginは必要に応じて調整 */
+}
+
+.circle {
+    width: 470px;
+    height: 470px;
+    border-radius: 50%;
+    background-color: #A48166;
+    color: white;
+    display: flex;
+    flex-direction: column; /* 内容を縦方向に並べる */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center; /* テキストを中央揃え */
+    padding: 20px;
+    /* font-size: 1.3rem; ← この指定はh2とpに分けるため削除または調整 */
+}
+
+.circle h2 {
+    font-size: 2em; /* 見出しのフォントサイズを調整 */
+    font-weight: bold;
+    color: white; /* 見出しの色も白に */
+    margin-bottom: 15px; /* 見出しと詳細の間の余白 */
+    position: relative; /* 相対的な位置指定を有効にする */
+    top: -100px; /* 例えば5ピクセル上に移動 */
+}
+
+.circle p {
+    font-size: 1.1em; /* 詳細のフォントサイズを調整 */
+    line-height: 1.5; /* 行の高さを調整 */
+    color: white; /* 詳細の色も白に */
+    margin: 0; /* デフォルトのpタグのmarginをリセット */
+    position: relative; /* 相対的な位置指定を有効にする */
+    top: -100px; /* 例えば5ピクセル上に移動 */
+}
+
+/* 上の円 */
+.circle-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 左下の円 */
+.circle-left {
+    bottom: 0;
+    left: 5%;
+}
+
+/* 右下の円 */
+.circle-right {
+    bottom: 0;
+    right: 5%;
+}
+
+/* 真ん中 - 今回は円の中に入れるため、このスタイルは不要かもしれません */
+/* .core-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 2rem;
+    color: #2c3e50;
+} */
+
+.fixed-cta-circle {
+    position: fixed;
+    bottom: 50px; /* 画面下からの距離 */
+    right: 50px;   /* 画面左からの距離 */
+    width: 200px;  /* 円の幅 */
+    height: 200px; /* 円の高さ */
+    background-color: #6689A4; /* 背景色 (既存のCTAボタンに合わせるか、任意の色を指定) */
+    color: white;             /* テキストの色 */
+    border-radius: 50%;       /* 円形にする */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;        /* フォントサイズ */
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 影を付けて立体感を出す */
+    z-index: 1001; /* 他の要素より手前に表示 (ヘッダーが1000なのでそれより大きく) */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fixed-cta-circle:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+    transform: scale(1.05);   /* ホバー時に少し拡大 */
+    text-decoration: none;
+    color: white;
+}
+
+/* animation */
+.fade-in {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.fade-in.fadein-left {
+    transform: translateX(-30px);
+}
+.fade-in.fadein-right {
+    transform: translateX(30px);
+}
+.fade-in.fadein-up {
+    transform: translateY(-30px);
+}
+.fade-in.fadein-bottom {
+    transform: translateY(30px);
+}
+
+.fade-in.scrollin {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+/* 時間差アニメーション用 */
+.delay-1 {
+    transition-delay: 0s;
+}
+.delay-2 {
+    transition-delay: 0.5s;
+}
+.delay-3 {
+    transition-delay: 1s;
+}

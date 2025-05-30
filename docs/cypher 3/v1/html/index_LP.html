@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYPHER</title>
+    <!--GA関連-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!--ここにGAのIDを入れる-->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');//ここにGAのIDを入れる
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style_LP.css">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. FAQの開閉処理
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const faqItem = item.closest('.faq-item');
+            if (faqItem) { // faqItemが正しく取得できたか確認
+                faqItem.classList.toggle('active');
+            }
+        });
+    });
+
+    // 他のDOMContentLoaded内で行いたい処理があればここに追加
+    // 例: 読み込み直後に .scrollin を遅れて付ける処理など
+    setTimeout(() => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        if (el.closest(".intro-split-section")) { // 対象セクションを追加・変更
+          el.classList.add("scrollin");
+        }
+      });
+    }, 200);
+    });
+
+    // スクロール時の処理はDOMContentLoadedの外でもOKな場合が多いですが、
+    // 一貫性のために中に入れても良いでしょう。
+    window.addEventListener("scroll", () => {
+        document.querySelectorAll(".fade-in").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("scrollin");
+            }
+        });
+    });
+    // 3. スクロール時に後続の要素にフェードインさせる
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("scrollin");
+        }
+      });
+    });
+
+  </script>
+    
+<body>
+
+    <header class="global-nav-header">
+        <div class="container">
+            <nav class="global-nav">
+                <div class="logo">
+                    <a href="#"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
+                <ul class="nav-links">
+                    <li><a href="./index_prepare.html" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
+                    <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
+                    <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
+                    <!-- <li><a href="#testimonials" id="testimonials-cta">先輩の声</a></li> -->
+                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li> 
+                    <li><a href="#faq-section" id="faq-section-cta">FAQ</a></li>
+                </ul>
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a> </nav>
+            </nav>
+        </div>
+    </header>
+
+    <section class="intro-split-section fade-in fadein-bottom">
+        <div class="container">
+            <div class="intro-split-content fade-in fadein-bottom">
+                <div class="intro-split-headline"> <h1>CYPHER</h1>
+                    <h2>AI時代を生き抜くために</h2>
+                </div>
+                <div class="intro-split-description fade-in fadein-bottom"> 
+                    <p>AI時代のキャリアを真剣に考えるあなたへ。<br>
+                    CYPHERは、大手企業のリアルな課題に挑む実践的コミュニティ。弊社独自の教育プログラム「LAD」の無料提供と、他では得られない実務案件への参画機会を通じ、あなたのスキルを本物の市場価値に変えます。 
+                    <div class="text-center  fade-in fadein-bottom">
+                        <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="button cta-button" id="intro-entry-cta">一期生募集！今すぐ応募する</a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero-section fade-in fadein-bottom">
+        <div class="container">
+            <h1 class="text-center fade-in fadein-bottom">DSスキルを磨き、未来を掴む。<br>CYPHERが提供する3つの価値</h1>
+            <!-- <h2 class="text-center fade-in fadein-bottom">データサイエンティストとしてのキャリアを真剣に考えるあなたへ。<br>
+                CYPHERは、単なる学習機会以上の「実践」「成長」「仲間」を提供します。<br>
+                あなたの可能性を最大限に引き出し、社会で活躍するための確かな土台を築きませんか?</h2> -->
+        </div>
+    </section>
+
+    <section id="three-values" class="core-values section-spacing fade-in fadein-bottom">
+        <div class="container">
+            <h3 class="text-center fade-in fadein-bottom">CYPHERが提供する3つの価値</h3>
+            <div class="value-grid">
+                <div class="value-card fade-in fadein-bottom delay-1">
+                    <h4>1. 実践経験</h4>
+                    <p>大企業の最前線で、本物のデータサイエンスを経験</p>
+                    <ul>
+                        <li>幅広い業界の大手企業の開発案件を実際に担当</li>
+                        <li>就職活動で語れる、貴重な経験</li>
+                        <li>他では得られないユニークで実践的な案件を提供</li>
+                    </ul>
+                    <!-- <p class="text-center">**案件例紹介**</p>
+                    <div class="logos-container">
+                        <img src="https://via.placeholder.com/80x40?text=CompanyA" alt="Company A">
+                        <img src="https://via.placeholder.com/80x40?text=CompanyB" alt="Company B">
+                        <img src="https://via.placeholder.com/80x40?text=CompanyC" alt="Company C">
+                        <img src="https://via.placeholder.com/80x40?text=CompanyD" alt="Company D">
+                    </div> -->
+                </div>
+
+                <!-- <div class="value-card fade-in fadein-bottom delay-2">
+                    <h4>2. ビジネス向けデータサイエンススキルの獲得</h4>
+                    <ul>
+                        <li>業界トップレベルのDS/PM教育プログラム</li>
+                            <p>多くの企業の研修で導入された弊社独自のDS/PM教育プログラム「LAD」を、CYPHERの学生は完全無料で受講できます 。代表原田による直接指導や講義を通じて 、実践的なスキルと知識を習得し、データサイエンティストとして市場価値の高い人材へと成長しましょう。
+                            <br><a href="#" target="_blank">LADについて詳しく見る &raquo; </a></li>
+                        <li>リアルな課題に挑み、実践力を高めるコンペティション</li>
+                            <p>リ実際の企業の課題から社会問題まで、多様なテーマを扱うコンペティションに参加できます 。学習した内容をアウトプットし、実践的な課題解決能力を養う絶好の機会です 。優秀な現役データサイエンティストからのサポートも受けながら 、仲間とともに切磋琢磨し、自身のスキルを試す場として活用してください。
+                            <br>**(後ほど)実際のコンペのテーマ事例を一つ(おもしろそうなもの)**</li> 
+                        <li>現役データサイエンティストがあなたの成長を徹底サポート</li>
+                            <p>経験豊富な現役データサイエンティストが、業務やコンペティションであなたをサポートします 。わからない箇所も気軽に質問できる環境で、安心して学習に取り組めます 。技術的な疑問はもちろん、キャリアに関する相談も可能です。</li>
+                    </ul>
+                </div> -->
+
+                 <div class="value-card fade-in fadein-bottom delay-2">
+                    <h4>2. AI/DSスキルの獲得</h4>
+                    <ul>
+                        <li><strong>トップレベルの教育プログラムを無料提供</strong>
+                                <p>弊社独自のDS/PM教育「LAD」を無料受講。代表原田の直接指導で、市場価値の高いスキルを習得できます。
+                                <br><a href="https://www.gruff.co.jp/product/" target="_blank">LADについて詳しく見る &raquo; </a></li> 
+                            <li><strong>実践力を高めるリアルなコンペ</strong>
+                                <p>企業課題や社会問題に取り組むコンペで実践力を強化。現役DSのサポートを受けながらスキルを試せます。</p>
+                            <li><strong>現役DSによる手厚い成長サポート</strong>
+                                <p>経験豊富なDSが業務や学習を徹底サポート。技術的な疑問からキャリア相談まで対応します。</p></li>
+                    </ul>
+                </div>
+
+                <div class="value-card fade-in fadein-bottom delay-3">
+                    <h4>3. 仲間との出会い</h4>
+                    <ul>
+                        <li>同じ志を持つ仲間と出会い、共に成長するコミュニティ</li>
+                        <p>単なるスキル習得だけでなく、同じ目標を持つ仲間と出会い、切磋琢磨できる環境を提供します 。チーム体制でコンペや実際の案件に携わることで、素晴らしい出会いがあなたを待っています 。</p>
+                    </ul>
+                    <div class="social-proof-gallery">
+                        <img src="../../data/event_1.JPG" alt="仲間との活動写真1">
+                        <img src="../../data/event_2.JPG" alt="仲間との活動写真2">
+                        <!-- <img src="https://via.placeholder.com/100x100?text=Group3" alt="仲間との活動写真3"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-value section-spacing ">
+        <div class="container">
+            <h2 class="text-center fade-in fadein-bottom">弊社だからこそ提供できる価値</h2>
+
+            <div class="company-intro">
+                <div>
+                    <h3 class="fade-in fadein-bottom">運営会社、株式会社グラフとは</h3>
+                    <p class="fade-in fadein-bottom delay-2">グラフは「データの利用価値を最大限に拡張する」ことをミッションとしたデータサイエンスAI(人工知能)企業です。</p>
+                    <p class="fade-in fadein-bottom delay-2">各産業界トップ企業での実績を持ち、データ利活用において実際的なノウハウを蓄積してきました。</p>
+                    <p class="fade-in fadein-bottom delay-2">AI(人工知能)・機械学習の活用やビッグデータ分析を通じて、クライアントにとって本当に必要な支援、ビジネス戦略コンサルティングを提供しています。</p>
+                </div>
+            </div>
+
+            <!-- <h3 class="text-center fade-in fadein-bottom">取引先企業一覧</h3>
+            <div class="client-logos fade-in fadein-bottom delay-2">
+                <img src="https://via.placeholder.com/100x50?text=Asahi" alt="Asahi"> 
+                <img src="https://via.placeholder.com/100x50?text=docomo" alt="docomo">
+                <img src="https://via.placeholder.com/100x50?text=KDDI" alt="KDDI">
+                <img src="https://via.placeholder.com/100x50?text=SOMPO+HOLDINGS" alt="SOMPO HOLDINGS">
+                <img src="https://via.placeholder.com/100x50?text=DAIMARU" alt="DAIMARU">
+                <img src="https://via.placeholder.com/100x50?text=東急" alt="東急">
+                <img src="https://via.placeholder.com/100x50?text=日経BP社" alt="日経BP社">
+                <img src="https://via.placeholder.com/100x50?text=Matsuzakaya" alt="Matsuzakaya">
+                <img src="https://via.placeholder.com/100x50?text=PARCO" alt="PARCO">
+                <img src="https://via.placeholder.com/100x50?text=FamilyMart" alt="FamilyMart">
+                <img src="https://via.placeholder.com/100x50?text=HONDA" alt="HONDA">
+                <img src="https://via.placeholder.com/100x50?text=MIZUHO" alt="MIZUHO">
+                <img src="https://via.placeholder.com/100x50?text=YAMAHA" alt="YAMAHA">
+                <img src="https://via.placeholder.com/100x50?text=PRECRUIT" alt="PRECRUIT">
+                <img src="https://via.placeholder.com/100x50?text=MUFG" alt="MUFG">
+            </div> -->
+    </section>
+
+    <section class="ceo-intro section-spacing fade-in fadein-bottom">
+        <div class = "container">
+            <h2 class="text-center">代表紹介</h2>
+            <div class="ceo-intro ceo-photo fade-in fadein-bottom">
+                <div>
+                    <img src="../../data/ceo.png" alt="代表 原田"> <!--ここにceoの画像を入れる-->
+                </div>
+                <div class="ceo-text fade-in fadein-bottom delay-2">
+                    <h3>代表紹介: 原田博植</h3>
+                    <p>日経データサイエンティストオブザイヤー受賞<br>
+                        代表の原田は、毎年1人だけ選出される日本経済新聞社主催「データサイエンティスト・オブ・ザ・イヤー」を2015年に受賞した、日本トップクラスのデータサイエンティストです。<br>
+                        シンクタンク、外資ITベンチャー、リクルートにてAI・機械学習の事業装着と組織設計をゼロから起案・具現化し、リクルート初のチーフデータサイエンティストとなりました。</p>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="other-values section-spacing">
+        <div class="container">
+            <h2 class="text-center">スキルアップだけじゃない<br>CYPHERで得られるプラスの成長機会</h2>
+            <div class="value-feature-grid">
+                <div class="value-feature-card fade-in fadein-bottom delay-1">
+                    <h4>多彩なイベント</h4>
+                    <p>CYPHERでは、現役データサイエンティストとのキャリア相談会や交流イベントなどを定期的に開催します 。</p>
+                    <p>現場のリアルな声を聞くことで、具体的なキャリアパスを描き、目標設定に役立てることができます。</p>
+                    <p>また、同じ志を持つ仲間たちとのネットワーキングは、モチベーションの維持や新たな視点の発見にも繋がるでしょう。</p>
+                    <!-- <div class="social-proof-gallery">
+                        <img src="https://via.placeholder.com/100x100?text=Event1" alt="イベント写真1">
+                        <img src="https://via.placeholder.com/100x100?text=Event2" alt="イベント写真2">
+                    </div> -->
+                </div>
+                <div class="value-feature-card fade-in fadein-bottom delay-2">
+                    <h4>実践と貢献で得る、確かな報酬</h4>
+                    <p>CYPHERで携わる実際の企業タスクでは、通常のインターン同様報酬を得ることができます。</p>
+                    <p>学びながら、そして社会に貢献しながら収入を得られる、他にない機会です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="testimonials section-spacing">
+        <div class="container">
+            <h2 class="text-center">先輩の声・活躍事例</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">❝</div>
+                    <p>"CYPHERでの企業案件参加は、私のキャリアを大きく変えました。理論だけでなく、実社会で通用するスキルが身についたと実感しています。"</p>
+                    <div class="student-info">- 学生A (企業案件参加)</div>
+                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">❝</div>
+                    <p>"コンペでの優勝は、自信に繋がりました。優秀な仲間との出会いもかけがえのない財産です。"</p>
+                    <div class="student-info">- 学生B (コンペ優秀者)</div>
+                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
+                </div>
+                 <div class="testimonial-card">
+                    <div class="quote-icon">❝</div>
+                    <p>"（具体的なストーリーをここに挿入）"</p>
+                    <div class="student-info">- 学生C (具体的な成果事例)</div>
+                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="faq-section" class="faq-section section-spacing">
+        <div class="container">
+            <h2 class="text-center">よくある質問 (FAQ)</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">CYPHERへの応募資格は何ですか？</div>
+                    <div class="faq-answer">
+                        <p>詳細な応募資格は募集ページより募集要項をご確認ください。主にデータサイエンスに興味のある学生、またはデータサイエンス関連のスキルを向上させたい方が対象です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">プログラムの期間はどれくらいですか？</div>
+                    <div class="faq-answer">
+                        <p>プログラムの期間は参加する案件やコンペによって異なりますが、柔軟に対応できるよう調整可能です。</p>
+                    </div>
+                </div>
+                <!-- <div class="faq-item">
+                    <div class="faq-question">報酬はどのくらいですか？</div>
+                    <div class="faq-answer">
+                        <p>ご参画いただく実務案件によって異なります。</p>
+                    </div>
+                </div> -->
+                <div class="faq-item">
+                    <div class="faq-question">未経験でも参加できますか？</div>
+                    <div class="faq-answer">
+                        <p>LADプログラムを通じて基礎から学べるため、意欲があれば未経験の方でもご応募いただけます。サポート体制も充実しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">選考プロセスについて教えてください。</div>
+                    <div class="faq-answer">
+                        <p>通常、書類選考と面接を行います。詳細については、応募後にご案内いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-form-cta" class="hero-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center" style="color: #444;">あなたの未来を、CYPHERで築きませんか？</h2>
+            <p class="text-center" style="font-size: 1.2em; color: #444;">一期生として、ここでしか得られない実践的な経験と仲間との出会いを掴みましょう。</p>
+            <div class="text-center">
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="button cta-button" id="entry-button" style="background-color: #6689A4;">今すぐエントリーする！</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 株式会社グラフ. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="fixed-cta-circle">
+        応募する
+      </a>
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 例1: IDが "ctaButtonApplyTop" のボタンのクリックを追跡
+        var applyButton = document.getElementById('ctaButtonApplyTop');
+        if (applyButton) {
+            applyButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', { // GA4に送信するイベント名
+                    'event_category': 'CTA',         // イベントのカテゴリ（任意）
+                    'event_label': '応募ボタンクリック_トップ', // イベントのラベル（任意）
+                    'button_text': this.innerText,   // クリックされたボタンのテキスト [cite: 13]
+                    'link_url': this.href            // リンク先URL (aタグの場合)
+                });
+                console.log('GA Event: cta_click - 応募ボタンクリック_トップ'); // デバッグ用
+            });
+        }
+    
+        // 例2: IDが "ctaButtonDocumentRequest" のボタンのクリックを追跡
+        var documentButton = document.getElementById('ctaButtonDocumentRequest');
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': '資料請求ボタンクリック',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - 資料請求ボタンクリック'); // デバッグ用
+            });
+        }
+    
+        // 他のCTAボタンがあれば同様に追加
+    });
+    </script>
+
+</html>
+
