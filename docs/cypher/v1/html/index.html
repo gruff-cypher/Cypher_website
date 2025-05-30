@@ -12,15 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYPHER</title>
-    <!--GA関連-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!--ここにGAのIDを入れる-->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-XXXXXXXXXX');//ここにGAのIDを入れる
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style_LP.css">
@@ -84,10 +75,7 @@
                 <div class="logo">
                     <a href="#"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
                 <ul class="nav-links">
-                    <li><a href="./index_prepare.html" target="_blank" onclick="gtag('event', 'cta_click', {
-                        event_category: 'CTA',
-                        event_label: 'DS Competitions'
-                      });" id="ds-competition-cta">DS Competitions</a></li>
+                    <li><a href="./index_prepare.html" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
                     <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
                     <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
                     <!-- <li><a href="#testimonials" id="testimonials-cta">先輩の声</a></li> -->
@@ -351,17 +339,17 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 例1: IDが "ctaButtonApplyTop" のボタンのクリックを追跡
-        var applyButton = document.getElementById('ctaButtonApplyTop');
+        // 例1: IDが "ds-competition-cta" のボタンのクリックを追跡
+        var applyButton = document.getElementById('ds-competition-cta');
         if (applyButton) {
             applyButton.addEventListener('click', function() {
                 gtag('event', 'cta_click', { // GA4に送信するイベント名
                     'event_category': 'CTA',         // イベントのカテゴリ（任意）
-                    'event_label': '応募ボタンクリック_トップ', // イベントのラベル（任意）
+                    'event_label': 'DS Competitions', // イベントのラベル（任意）
                     'button_text': this.innerText,   // クリックされたボタンのテキスト [cite: 13]
                     'link_url': this.href            // リンク先URL (aタグの場合)
                 });
-                console.log('GA Event: cta_click - 応募ボタンクリック_トップ'); // デバッグ用
+                console.log('GA Event: cta_click - DS Competitions'); // デバッグ用
             });
         }
     
