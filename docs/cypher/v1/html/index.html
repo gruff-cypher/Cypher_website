@@ -64,16 +64,12 @@
   </script>
     
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
     <header class="global-nav-header">
         <div class="container">
             <nav class="global-nav">
                 <div class="logo">
-                    <a href="#"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
+                    <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
                 <ul class="nav-links">
                     <li><a href="./index_prepare.html" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
                     <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
@@ -154,7 +150,7 @@
                     <ul>
                         <li><strong>トップレベルの教育プログラムを無料提供</strong>
                                 <p>弊社独自のDS/PM教育「LAD」を無料受講。代表原田の直接指導で、市場価値の高いスキルを習得できます。
-                                <br><a href="https://www.gruff.co.jp/product/" target="_blank">LADについて詳しく見る &raquo; </a></li> 
+                                <br><a href="https://www.gruff.co.jp/product/" target="_blank" id="core-values-lad-cta">LADについて詳しく見る &raquo; </a></li> 
                             <li><strong>実践力を高めるリアルなコンペ</strong>
                                 <p>企業課題や社会問題に取り組むコンペで実践力を強化。現役DSのサポートを受けながらスキルを試せます。</p>
                             <li><strong>現役DSによる手厚い成長サポート</strong>
@@ -282,13 +278,13 @@
             <h2 class="text-center">よくある質問 (FAQ)</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">CYPHERへの応募資格は何ですか？</div>
+                    <div class="faq-question" id="question1">CYPHERへの応募資格は何ですか？</div>
                     <div class="faq-answer">
                         <p>詳細な応募資格は募集ページより募集要項をご確認ください。主にデータサイエンスに興味のある学生、またはデータサイエンス関連のスキルを向上させたい方が対象です。</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">プログラムの期間はどれくらいですか？</div>
+                    <div class="faq-question" id="question2">プログラムの期間はどれくらいですか？</div>
                     <div class="faq-answer">
                         <p>プログラムの期間は参加する案件やコンペによって異なりますが、柔軟に対応できるよう調整可能です。</p>
                     </div>
@@ -300,13 +296,13 @@
                     </div>
                 </div> -->
                 <div class="faq-item">
-                    <div class="faq-question">未経験でも参加できますか？</div>
+                    <div class="faq-question" id="question3">未経験でも参加できますか？</div>
                     <div class="faq-answer">
                         <p>LADプログラムを通じて基礎から学べるため、意欲があれば未経験の方でもご応募いただけます。サポート体制も充実しています。</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">選考プロセスについて教えてください。</div>
+                    <div class="faq-question" id="question4">選考プロセスについて教えてください。</div>
                     <div class="faq-answer">
                         <p>通常、書類選考と面接を行います。詳細については、応募後にご案内いたします。</p>
                     </div>
@@ -320,7 +316,7 @@
             <h2 class="text-center" style="color: #444;">あなたの未来を、CYPHERで築きませんか？</h2>
             <p class="text-center" style="font-size: 1.2em; color: #444;">一期生として、ここでしか得られない実践的な経験と仲間との出会いを掴みましょう。</p>
             <div class="text-center">
-                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="button cta-button" id="entry-button" style="background-color: #6689A4;">今すぐエントリーする！</a>
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="button cta-button" id="footer-entry-button" style="background-color: #6689A4;">今すぐエントリーする！</a>
             </div>
         </div>
     </section>
@@ -331,7 +327,7 @@
         </div>
     </footer>
 
-    <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="fixed-cta-circle">
+    <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="fixed-cta-circle" id="fixed-cta-circle-cta">
         応募する
       </a>
 
@@ -345,7 +341,7 @@
             applyButton.addEventListener('click', function() {
                 gtag('event', 'cta_click', { // GA4に送信するイベント名
                     'event_category': 'CTA',         // イベントのカテゴリ（任意）
-                    'event_label': 'DS Competitions', // イベントのラベル（任意）
+                    'event_label': 'DS Competitions_by_nav', // イベントのラベル（任意）
                     'button_text': this.innerText,   // クリックされたボタンのテキスト [cite: 13]
                     'link_url': this.href            // リンク先URL (aタグの場合)
                 });
@@ -358,7 +354,7 @@
             documentButton.addEventListener('click', function() {
                 gtag('event', 'cta_click', {
                     'event_category': 'CTA',
-                    'event_label': 'Events',
+                    'event_label': 'Events_by_nav',
                     'button_text': this.innerText
                 });
                 console.log('GA Event: cta_click - Events'); // デバッグ用
@@ -372,14 +368,168 @@
                 documentButton.addEventListener('click', function() {
                     gtag('event', 'cta_click', {
                         'event_category': 'CTA',
-                        'event_label': 'LAD',
+                        'event_label': 'LAD_by_nav',
                         'button_text': this.innerText
                     });
-                    console.log('GA Event: cta_click - LAD'); // デバッグ用
+                    console.log('GA Event: cta_click - LAD_by_nav'); // デバッグ用
                 });
             }
         
-            // 他のCTAボタンがあれば同様に追加
+        var documentButton = document.getElementById('about-us-cta');
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'About Us_by_nav',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - About Us'); // デバッグ用
+            });
+        }
+    
+        var documentButton = document.getElementById('nav-apply-cta');
+            if (documentButton) {
+                documentButton.addEventListener('click', function() {
+                    gtag('event', 'cta_click', {
+                        'event_category': 'CTA',
+                        'event_label': 'Apply_by_nav',
+                        'button_text': this.innerText
+                    });
+                    console.log('GA Event: cta_click - Apply_by_nav'); // デバッグ用
+                });
+            }
+        
+        var documentButton = document.getElementById('intro-entry-cta');
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Apply_by_Intro',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Apply_by_Intro'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('footer-entry-button');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Apply_by_Footer',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Apply_by_Footer'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('core-values-lad-cta');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'LAD_by_Core_Values',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - LAD_by_Core_Values'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('fixed-cta-circle-cta');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Apply_by_Fixed_CTA_Circle',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Apply_by_Fixed_CTA_Circle'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('nav-logo-cta');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Logo_by_nav',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('nav-logo-cta');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Logo_by_nav',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+            });
+
+        var documentButton = document.getElementById('nav-logo-cta');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Logo_by_nav',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Logo_by_nav'); // デバッグ用
+            });
+        }
+        }
+
+        var documentButton = document.getElementById('question1');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Question1_by_FAQ',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Question1_by_FAQ'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('question2');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Question2_by_FAQ',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Question2_by_FAQ'); // デバッグ用
+            });
+        }
+
+        var documentButton = document.getElementById('question3');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Question3_by_FAQ',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Question3_by_FAQ'); // デバッグ用
+            });
+        }   
+
+        var documentButton = document.getElementById('question4');   
+        if (documentButton) {
+            documentButton.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Question4_by_FAQ',
+                    'button_text': this.innerText
+                });
+                console.log('GA Event: cta_click - Question4_by_FAQ'); // デバッグ用
+            });
+        }   
     });
     </script>
 
