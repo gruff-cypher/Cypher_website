@@ -19,6 +19,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style_LP.css">
+
+    <style>
+        /* ハンバーガーアイコンの基本スタイル */
+        .nav-toggle {
+          display: none;
+          position: relative;
+          width: 30px;
+          height: 24px;
+          cursor: pointer;
+          z-index: 1100;
+          background: none;
+          border: none;
+        }
+        .nav-toggle span {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: #333;
+          border-radius: 2px;
+          transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+        }
+        .nav-toggle span:nth-child(1) { top: 0; }
+        .nav-toggle span:nth-child(2) { top: 10px; }
+        .nav-toggle span:nth-child(3) { top: 20px; }
+    
+        /* open時の変形 */
+        .nav-toggle.open span:nth-child(1) {
+          top: 10px;
+          transform: rotate(45deg);
+        }
+        .nav-toggle.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .nav-toggle.open span:nth-child(3) {
+          top: 10px;
+          transform: rotate(-45deg);
+        }
+    
+        /* モバイル時のメニュー制御 */
+        @media (max-width: 768px) {
+          /* ハンバーガー表示 */
+          .nav-toggle { display: block; }
+          
+          .global-nav .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          }
+          .global-nav .nav-links.active {
+            display: flex;
+          }
+          .global-nav .nav-links li a {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eaeaea;
+          }
+          .global-nav .nav-cta-button {
+            display: none;
+          }
+        }
+      </style>
     
 </head>
 
@@ -94,7 +163,7 @@
     <section class="intro-split-section fade-in fadein-bottom">
         <div class="container">
             <div class="intro-split-content fade-in fadein-bottom">
-                <div class="intro-split-headline"> <h1>CYPHER3</h1>
+                <div class="intro-split-headline"> <h1>CYPHER2</h1>
                     <h2>AI時代を生き抜くために</h2>
                 </div>
                 <div class="intro-split-description fade-in fadein-bottom"> 
@@ -258,8 +327,6 @@
     <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="fixed-cta-circle" id="fixed-cta-circle-cta">
         応募する
       </a>
-
-</body>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -470,5 +537,7 @@
       });
     });
   </script>
+
+</body>
 
 </html>
