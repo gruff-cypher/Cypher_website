@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0R85H3H9D"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,27 +19,14 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-
-    // ▼▼▼ ハンバーガーメニューの開閉処理（ここから追加） ▼▼▼
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-        const navLinks = document.getElementById('nav-links-menu');
-
-        hamburgerMenu.addEventListener('click', function() {
-            navLinks.classList.toggle('active'); // メニューの表示/非表示を切り替え
-            hamburgerMenu.classList.toggle('active'); // ボタンのアイコンを切り替え
-
-            // aria属性を更新してアクセシビリティを向上
-            const isOpen = navLinks.classList.contains('active');
-            hamburgerMenu.setAttribute('aria-expanded', isOpen);
+    // 1. FAQの開閉処理
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const faqItem = item.closest('.faq-item');
+            if (faqItem) { // faqItemが正しく取得できたか確認
+                faqItem.classList.toggle('active');
+            }
         });
-        // 1. FAQの開閉処理
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', event => {
-                const faqItem = item.closest('.faq-item');
-                if (faqItem) { // faqItemが正しく取得できたか確認
-                    faqItem.classList.toggle('active');
-                }
-            });
     });
 
     // 他のDOMContentLoaded内で行いたい処理があればここに追加
@@ -82,22 +68,14 @@
         <div class="container">
             <nav class="global-nav">
                 <div class="logo">
-                    <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a>
-                </div>
-    
-                <button class="hamburger-menu" id="hamburger-menu" aria-label="メニューを開く" aria-controls="nav-links-menu" aria-expanded="false">
-                    <span class="hamburger-menu-bar"></span>
-                    <span class="hamburger-menu-bar"></span>
-                    <span class="hamburger-menu-bar"></span>
-                </button>
-                <ul class="nav-links" id="nav-links-menu">
+                    <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <ul class="nav-links">
                     <li><a href="https://temporal-pulsar-b51.notion.site/CYPHER-01-2018cc36c101801ab885e87dd4a165dc" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
                     <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
                     <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
-                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li>
+                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li> 
                     <li><a href="#faq-section" id="faq-section-cta">FAQ</a></li>
                 </ul>
-                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a>
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a> </nav>
             </nav>
         </div>
     </header>
@@ -123,10 +101,7 @@
     <section class="hero-section fade-in fadein-bottom">
         <div class="container">
             <h1 class="text-center fade-in fadein-bottom">DSスキルを磨き、未来を掴む。<br>CYPHERが提供する3つの価値</h1>
-            <!-- <h2 class="text-center fade-in fadein-bottom">データサイエンティストとしてのキャリアを真剣に考えるあなたへ。<br>
-                CYPHERは、単なる学習機会以上の「実践」「成長」「仲間」を提供します。<br>
-                あなたの可能性を最大限に引き出し、社会で活躍するための確かな土台を築きませんか?</h2> -->
-        </div>
+            </div>
     </section>
 
     <section id="three-values" class="core-values section-spacing fade-in fadein-bottom">
@@ -141,30 +116,9 @@
                         <li>就職活動で語れる、貴重な経験</li>
                         <li>他では得られないユニークで実践的な案件を提供</li>
                     </ul>
-                    <!-- <p class="text-center">**案件例紹介**</p>
-                    <div class="logos-container">
-                        <img src="https://via.placeholder.com/80x40?text=CompanyA" alt="Company A">
-                        <img src="https://via.placeholder.com/80x40?text=CompanyB" alt="Company B">
-                        <img src="https://via.placeholder.com/80x40?text=CompanyC" alt="Company C">
-                        <img src="https://via.placeholder.com/80x40?text=CompanyD" alt="Company D">
-                    </div> -->
-                </div>
+                    </div>
 
-                <!-- <div class="value-card fade-in fadein-bottom delay-2">
-                    <h4>2. ビジネス向けデータサイエンススキルの獲得</h4>
-                    <ul>
-                        <li>業界トップレベルのDS/PM教育プログラム</li>
-                            <p>多くの企業の研修で導入された弊社独自のDS/PM教育プログラム「LAD」を、CYPHERの学生は完全無料で受講できます 。代表原田による直接指導や講義を通じて 、実践的なスキルと知識を習得し、データサイエンティストとして市場価値の高い人材へと成長しましょう。
-                            <br><a href="#" target="_blank">LADについて詳しく見る &raquo; </a></li>
-                        <li>リアルな課題に挑み、実践力を高めるコンペティション</li>
-                            <p>リ実際の企業の課題から社会問題まで、多様なテーマを扱うコンペティションに参加できます 。学習した内容をアウトプットし、実践的な課題解決能力を養う絶好の機会です 。優秀な現役データサイエンティストからのサポートも受けながら 、仲間とともに切磋琢磨し、自身のスキルを試す場として活用してください。
-                            <br>**(後ほど)実際のコンペのテーマ事例を一つ(おもしろそうなもの)**</li> 
-                        <li>現役データサイエンティストがあなたの成長を徹底サポート</li>
-                            <p>経験豊富な現役データサイエンティストが、業務やコンペティションであなたをサポートします 。わからない箇所も気軽に質問できる環境で、安心して学習に取り組めます 。技術的な疑問はもちろん、キャリアに関する相談も可能です。</li>
-                    </ul>
-                </div> -->
-
-                 <div class="value-card fade-in fadein-bottom delay-2">
+                <div class="value-card fade-in fadein-bottom delay-2">
                     <h4>2. AI/DSスキルの獲得</h4>
                     <ul>
                         <li><strong>トップレベルの教育プログラムを無料提供</strong>
@@ -186,8 +140,7 @@
                     <div class="social-proof-gallery">
                         <img src="../../data/event_1.JPG" alt="仲間との活動写真1">
                         <img src="../../data/event_2.JPG" alt="仲間との活動写真2">
-                        <!-- <img src="https://via.placeholder.com/100x100?text=Group3" alt="仲間との活動写真3"> -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -206,33 +159,14 @@
                 </div>
             </div>
 
-            <!-- <h3 class="text-center fade-in fadein-bottom">取引先企業一覧</h3>
-            <div class="client-logos fade-in fadein-bottom delay-2">
-                <img src="https://via.placeholder.com/100x50?text=Asahi" alt="Asahi"> 
-                <img src="https://via.placeholder.com/100x50?text=docomo" alt="docomo">
-                <img src="https://via.placeholder.com/100x50?text=KDDI" alt="KDDI">
-                <img src="https://via.placeholder.com/100x50?text=SOMPO+HOLDINGS" alt="SOMPO HOLDINGS">
-                <img src="https://via.placeholder.com/100x50?text=DAIMARU" alt="DAIMARU">
-                <img src="https://via.placeholder.com/100x50?text=東急" alt="東急">
-                <img src="https://via.placeholder.com/100x50?text=日経BP社" alt="日経BP社">
-                <img src="https://via.placeholder.com/100x50?text=Matsuzakaya" alt="Matsuzakaya">
-                <img src="https://via.placeholder.com/100x50?text=PARCO" alt="PARCO">
-                <img src="https://via.placeholder.com/100x50?text=FamilyMart" alt="FamilyMart">
-                <img src="https://via.placeholder.com/100x50?text=HONDA" alt="HONDA">
-                <img src="https://via.placeholder.com/100x50?text=MIZUHO" alt="MIZUHO">
-                <img src="https://via.placeholder.com/100x50?text=YAMAHA" alt="YAMAHA">
-                <img src="https://via.placeholder.com/100x50?text=PRECRUIT" alt="PRECRUIT">
-                <img src="https://via.placeholder.com/100x50?text=MUFG" alt="MUFG">
-            </div> -->
-    </section>
+            </section>
 
     <section class="ceo-intro section-spacing fade-in fadein-bottom">
         <div class = "container">
             <h2 class="text-center">代表紹介</h2>
             <div class="ceo-intro ceo-photo fade-in fadein-bottom">
                 <div>
-                    <img src="../../data/ceo.png" alt="代表 原田"> <!--ここにceoの画像を入れる-->
-                </div>
+                    <img src="../../data/ceo.png" alt="代表 原田"> </div>
                 <div class="ceo-text fade-in fadein-bottom delay-2">
                     <h3>代表紹介: 原田博植</h3>
                     <p>日経データサイエンティストオブザイヤー受賞<br>
@@ -252,11 +186,7 @@
                     <p>CYPHERでは、現役データサイエンティストとのキャリア相談会や交流イベントなどを定期的に開催します 。</p>
                     <p>現場のリアルな声を聞くことで、具体的なキャリアパスを描き、目標設定に役立てることができます。</p>
                     <p>また、同じ志を持つ仲間たちとのネットワーキングは、モチベーションの維持や新たな視点の発見にも繋がるでしょう。</p>
-                    <!-- <div class="social-proof-gallery">
-                        <img src="https://via.placeholder.com/100x100?text=Event1" alt="イベント写真1">
-                        <img src="https://via.placeholder.com/100x100?text=Event2" alt="イベント写真2">
-                    </div> -->
-                </div>
+                    </div>
                 <div class="value-feature-card fade-in fadein-bottom delay-2">
                     <h4>実践と貢献で得る、確かな報酬</h4>
                     <p>CYPHERで携わる実際の企業タスクでは、通常のインターン同様報酬を得ることができます。</p>
@@ -265,32 +195,6 @@
             </div>
         </div>
     </section>
-
-    <!-- <section class="testimonials section-spacing">
-        <div class="container">
-            <h2 class="text-center">先輩の声・活躍事例</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="quote-icon">❝</div>
-                    <p>"CYPHERでの企業案件参加は、私のキャリアを大きく変えました。理論だけでなく、実社会で通用するスキルが身についたと実感しています。"</p>
-                    <div class="student-info">- 学生A (企業案件参加)</div>
-                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">❝</div>
-                    <p>"コンペでの優勝は、自信に繋がりました。優秀な仲間との出会いもかけがえのない財産です。"</p>
-                    <div class="student-info">- 学生B (コンペ優秀者)</div>
-                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
-                </div>
-                 <div class="testimonial-card">
-                    <div class="quote-icon">❝</div>
-                    <p>"（具体的なストーリーをここに挿入）"</p>
-                    <div class="student-info">- 学生C (具体的な成果事例)</div>
-                    <p>具体的な成果や成長、キャリアへの影響などを語ってもらう</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section id="faq-section" class="faq-section section-spacing">
         <div class="container">
@@ -308,12 +212,6 @@
                         <p>プログラムの期間は参加する案件やコンペによって異なりますが、柔軟に対応できるよう調整可能です。</p>
                     </div>
                 </div>
-                <!-- <div class="faq-item">
-                    <div class="faq-question">報酬はどのくらいですか？</div>
-                    <div class="faq-answer">
-                        <p>ご参画いただく実務案件によって異なります。</p>
-                    </div>
-                </div> -->
                 <div class="faq-item">
                     <div class="faq-question" id="question3">未経験でも参加できますか？</div>
                     <div class="faq-answer">
@@ -361,7 +259,7 @@
                 gtag('event', 'cta_click', { // GA4に送信するイベント名
                     'event_category': 'CTA',         // イベントのカテゴリ（任意）
                     'event_label': 'DS Competitions_by_nav', // イベントのラベル（任意）
-                    'button_text': this.innerText,   // クリックされたボタンのテキスト [cite: 13]
+                    'button_text': this.innerText,   // クリックされたボタンのテキスト
                     'link_url': this.href            // リンク先URL (aタグの場合)
                 });
                 console.log('GA Event: cta_click - DS Competitions'); // デバッグ用
@@ -553,4 +451,3 @@
     </script>
 
 </html>
-
