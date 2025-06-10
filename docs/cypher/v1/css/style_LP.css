@@ -17,93 +17,71 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Global Navigation Styles */
-.global-nav-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* シャドウをより繊細に */
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    /* --- ヘッダー --- */
+    .global-nav {
+        /* モバイルではflex-wrapを有効にして、CTAボタンが下に回り込めるようにする */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-.global-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px; /* コンテナ幅を維持 */
-    margin: 0 auto;
-    padding: 0;
-}
+    /* --- ハンバーガーボタンをモバイルで表示 --- */
+    .hamburger-menu {
+        display: block; /* モバイルでは表示 */
+    }
 
-.global-nav .logo img {
-    width: 110px; /* ロゴサイズ調整 */
-    height: auto; /* 高さは自動調整 */
-    margin-right: 0px;
-    margin-left: -50px; /* レイアウトに応じて調整 */
-}
+    /* --- ナビゲーションリンクを非表示 & スタイル調整 --- */
+    .global-nav .nav-links {
+        display: none; /* デフォルトでは非表示にする */
+        flex-direction: column;
+        width: 100%;
+        order: 3; /* ロゴ、ハンバーガーボタンの下に回り込ませる */
+        background-color: #f8f9fa;
+        padding: 20px 0;
+        margin-top: 15px;
+        gap: 0;
+    }
 
-.global-nav .logo a {
-    font-size: 1.8em; /* 維持 */
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-}
+    /* --- JSでactiveクラスが付いたら表示 --- */
+    .global-nav .nav-links.active {
+        display: flex;
+    }
 
-.global-nav .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 50px; /* 項目間のスペースを少し調整 */
-}
+    .global-nav .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
 
-.global-nav .nav-links li a {
-    color: #333; /* テキスト色を少し濃く */
-    font-weight: 500; /* やや太めに */
-    font-size: 1em; /* サイズ調整 */
-    padding: 8px 0; /* パディング調整 */
-    position: relative;
-    transition: color 0.3s ease;
-    letter-spacing: 0.5px; /* 文字間を少し広げる */
-}
+    .global-nav .nav-links li a {
+        padding: 15px 20px;
+        display: block;
+        width: 100%;
+    }
 
-.global-nav .nav-links li a:hover {
-    color: #A48166; /* ホバー時の色をブラウン系に */
-}
+    .global-nav .nav-links li a::after {
+        display: none; /* スマホでは下線アニメーションは不要 */
+    }
 
-.global-nav .nav-links li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; /* 下線の位置調整 */
-    width: 0;
-    height: 2px;
-    background-color: #A48166; /* ホバー時の下線色 */
-    transition: width 0.3s ease;
-}
+    /* --- CTAボタンの位置調整 --- */
+    .global-nav .nav-cta-button {
+        display: none; /* ヘッダー内のCTAは非表示にして、開いたメニュー内に表示させるか、このまま非表示にするかを選択 */
+        /* もし表示させたい場合は .nav-links 内に li として移動するのも手です */
+    }
+    
+    /* --- ハンバーガーメニューが開いた時のアイコン変化 (バツ印) --- */
+    .hamburger-menu.active .hamburger-menu-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .hamburger-menu-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .hamburger-menu-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
-.global-nav .nav-links li a:hover::after {
-    width: 100%;
-}
 
-.global-nav .nav-cta-button {
-    background-color: #5a7d9a; /* メインCTAボタンの色を少し調整 (既存の#6689A4より若干落ち着いた色) */
-    color: #fff;
-    padding: 12px 24px; /* パディング調整 */
-    border-radius: 4px; /* 角を少し丸める */
-    font-weight: 600; /* 太さ調整 */
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    letter-spacing: 0.5px;
-}
 
-.global-nav .nav-cta-button:hover {
-    background-color: #4e6b86; /* ホバー時の色を少し濃く */
-    transform: translateY(-2px); /* 少し浮き上がる効果 */
-    text-decoration: none;
-    color: white;
-}
 
 /* General Styles */
 body {
