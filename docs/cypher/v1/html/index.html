@@ -97,8 +97,8 @@
         .global-nav .nav-cta-button { display: none; }
 
         .container {
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         /* セクションごとのテキストも個別に余白を追加 */
@@ -109,6 +109,22 @@
             padding: 0 12px;
             /* １行目だけ字下げしたいとき */
             text-indent: 1em;
+        }
+
+        /* 代表紹介セクションを縦並びに */
+        .ceo-photo {
+            /* すでに display:flex になっている前提で、縦並びに */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        /* 画像とテキストの間に余白を */
+        .ceo-photo > div:first-child {
+            margin-bottom: 20px;
+        }
+        /* テキスト部分の幅を100%に */
+        .ceo-photo .ceo-text {
+            width: 100%;
         }
     }
           
@@ -188,7 +204,7 @@
     <section class="intro-split-section fade-in fadein-bottom">
         <div class="container">
             <div class="intro-split-content fade-in fadein-bottom">
-                <div class="intro-split-headline"> <h1>CYPHER3</h1>
+                <div class="intro-split-headline"> <h1>CYPHER2</h1>
                     <h2>AI時代を生き抜くために</h2>
                 </div>
                 <div class="intro-split-description fade-in fadein-bottom"> 
