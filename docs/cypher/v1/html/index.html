@@ -67,6 +67,12 @@
     <header class="global-nav-header">
         <div class="container">
             <nav class="global-nav">
+                <!-- ハンバーガートグルボタン -->
+                <button id="menu-toggle" class="nav-toggle" aria-label="メニューを開閉">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="logo">
                     <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <ul class="nav-links">
                     <li><a href="https://temporal-pulsar-b51.notion.site/CYPHER-01-2018cc36c101801ab885e87dd4a165dc" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
@@ -448,6 +454,16 @@
             });
         }   
     });
-    </script>
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('menu-toggle');
+      var menu   = document.querySelector('.global-nav .nav-links');
+      toggle.addEventListener('click', function() {
+        toggle.classList.toggle('open');
+        menu.classList.toggle('active');
+      });
+    });
+  </script>
 
 </html>
