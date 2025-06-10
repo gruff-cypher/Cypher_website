@@ -20,14 +20,27 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-    // 1. FAQの開閉処理
-    document.querySelectorAll('.faq-question').forEach(item => {
-        item.addEventListener('click', event => {
-            const faqItem = item.closest('.faq-item');
-            if (faqItem) { // faqItemが正しく取得できたか確認
-                faqItem.classList.toggle('active');
-            }
+
+    // ▼▼▼ ハンバーガーメニューの開閉処理（ここから追加） ▼▼▼
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links-menu');
+
+        hamburgerMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active'); // メニューの表示/非表示を切り替え
+            hamburgerMenu.classList.toggle('active'); // ボタンのアイコンを切り替え
+
+            // aria属性を更新してアクセシビリティを向上
+            const isOpen = navLinks.classList.contains('active');
+            hamburgerMenu.setAttribute('aria-expanded', isOpen);
         });
+        // 1. FAQの開閉処理
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const faqItem = item.closest('.faq-item');
+                if (faqItem) { // faqItemが正しく取得できたか確認
+                    faqItem.classList.toggle('active');
+                }
+            });
     });
 
     // 他のDOMContentLoaded内で行いたい処理があればここに追加
@@ -69,16 +82,22 @@
         <div class="container">
             <nav class="global-nav">
                 <div class="logo">
-                    <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a> </div> <!--ここにロゴ画像を入れる-->
-                <ul class="nav-links">
+                    <a href="./index.html" id="nav-logo-cta"><img src="../../data/logo.jpeg" alt="CYPHER"></a>
+                </div>
+    
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="メニューを開く" aria-controls="nav-links-menu" aria-expanded="false">
+                    <span class="hamburger-menu-bar"></span>
+                    <span class="hamburger-menu-bar"></span>
+                    <span class="hamburger-menu-bar"></span>
+                </button>
+                <ul class="nav-links" id="nav-links-menu">
                     <li><a href="https://temporal-pulsar-b51.notion.site/CYPHER-01-2018cc36c101801ab885e87dd4a165dc" target="_blank" id="ds-competition-cta">DS Competitions</a></li>
                     <li><a href="./index_prepare.html" target="_blank" id="events-cta">Events</a></li>
                     <li><a href="https://www.gruff.co.jp/product/" target="_blank" id="lad-cta">LAD</a></li>
-                    <!-- <li><a href="#testimonials" id="testimonials-cta">先輩の声</a></li> -->
-                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li> 
+                    <li><a href="https://www.gruff.co.jp/" target="_blank" id="about-us-cta">About us</a></li>
                     <li><a href="#faq-section" id="faq-section-cta">FAQ</a></li>
                 </ul>
-                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a> </nav>
+                <a href="https://forms.gle/1xn136rYtNAmU6q69" target="_blank" class="nav-cta-button" id="nav-apply-cta">応募する</a>
             </nav>
         </div>
     </header>
