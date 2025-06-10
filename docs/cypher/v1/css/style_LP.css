@@ -641,37 +641,39 @@ a:hover {
 
 /* レスポンシブ対応 (既存のものをベースに微調整が必要な場合がある) */
 @media (max-width: 768px) {
-
-    /* ハンバーガー表示 */
-    .nav-toggle { display: block; }
-      
-    .global-nav .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      flex-direction: column;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .global-nav .nav-links.active {
-      display: flex;
-    }
-    .global-nav .nav-links li a {
-      padding: 15px 20px;
-      border-bottom: 1px solid #eaeaea;
-    }
-    .global-nav .nav-cta-button {
-      display: none;
-    }
-
     .global-nav {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .global-nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 15px;
+        /* display: none; JSで制御 */
+    }
+
+    .global-nav .nav-links.active {
+        display: flex;
+    }
+
+    .global-nav .nav-links li {
+        width: 100%;
+        text-align: left; /* スマホでは左揃え */
+    }
+    .global-nav .nav-links li a {
+        padding: 12px 15px; /* スマホでのタップ領域を確保 */
+        display: block;
+    }
+    .global-nav .nav-links li a::after { /* スマホでは下線アニメーションは不要な場合も */
+        display: none;
+    }
+
+    .global-nav .nav-cta-button {
+        width: auto; /* 幅を自動に */
+        margin-top: 15px;
+        align-self: flex-start; /* 左寄せ */
     }
 
     .intro-split-section {
