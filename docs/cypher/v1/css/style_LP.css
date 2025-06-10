@@ -12,10 +12,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* コンテナ幅を維持 */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
-}
+    padding: 0 20px;
+  }
+  
+  .nav-icon {
+    width: 40px;
+    height: auto;
+  }
+  
+  /* 👇 スマホ用（画面幅が768px以下の場合） */
+  @media (max-width: 768px) {
+    .global-nav {
+      flex-direction: row; /* 横並びを維持 */
+      padding: 10px 16px;
+    }
+  
+    .nav-icon {
+      width: 28px;     /* スマホ用に小さくする */
+      height: auto;
+    }
+  
+    .nav-list {
+      gap: 12px;        /* メニュー項目の間隔を調整 */
+    }
+  }
+  
 
 .global-nav .logo img {
     width: 110px; /* ロゴサイズ調整 */
