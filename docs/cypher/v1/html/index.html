@@ -60,41 +60,43 @@
     
         /* モバイル時のメニュー制御 */
         @media (max-width: 768px) {
-          /* ハンバーガー表示 */
-          .nav-toggle { display: block; 
-            margin-left: auto;
-            margin-right: 0;
-          }
+            /* 親要素を相対位置に */
+        .global-nav-header { position: relative; }
 
-          .global-nav {
-            flex-direction: row; /* 横並びを維持 */
-            padding: 10px 16px;
-          }
-          
-          .global-nav .nav-links {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            flex-direction: column;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          }
-          .global-nav .nav-links.active {
-            display: flex;
-          }
-          .global-nav .nav-links li a {
-            padding: 15px 20px;
-            border-bottom: 1px solid #eaeaea;
-          }
-          .global-nav .nav-cta-button {
-            display: none;
-          }
+        /* ロゴを左上に固定 */
+        .global-nav-header .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
         }
+        /* ハンバーガーを右上に固定 */
+        .global-nav-header #menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        }
+
+        /* メニューは隠してトグルで開閉 */
+        .global-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .global-nav .nav-links.active { display: flex; }
+        .global-nav .nav-links li a { padding: 15px 20px; border-bottom: 1px solid #eaeaea; }
+        /* PC用応募ボタンは隠す */
+        .global-nav .nav-cta-button { display: none; }
+    }
+          
       </style>
     
 </head>
@@ -171,7 +173,7 @@
     <section class="intro-split-section fade-in fadein-bottom">
         <div class="container">
             <div class="intro-split-content fade-in fadein-bottom">
-                <div class="intro-split-headline"> <h1>CYPHER3</h1>
+                <div class="intro-split-headline"> <h1>CYPHER2</h1>
                     <h2>AI時代を生き抜くために</h2>
                 </div>
                 <div class="intro-split-description fade-in fadein-bottom"> 
