@@ -1,0 +1,430 @@
+.global-nav-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* シャドウをより繊細に */
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.global-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* コンテナ幅を維持 */
+    margin: 0 auto;
+    padding: 0;
+}
+
+.global-nav .logo img {
+    width: 110px; /* ロゴサイズ調整 */
+    height: auto; /* 高さは自動調整 */
+    margin-right: 0px;
+    margin-left: -50px; /* レイアウトに応じて調整 */
+}
+
+.global-nav .logo a {
+    font-size: 1.8em; /* 維持 */
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.global-nav .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px; /* 項目間のスペースを少し調整 */
+}
+
+.global-nav .nav-links li a {
+    color: #333; /* テキスト色を少し濃く */
+    font-weight: 500; /* やや太めに */
+    font-size: 1em; /* サイズ調整 */
+    padding: 8px 0; /* パディング調整 */
+    position: relative;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px; /* 文字間を少し広げる */
+}
+
+.global-nav .nav-links li a:hover {
+    color: #A48166; /* ホバー時の色をブラウン系に */
+}
+
+.global-nav .nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 下線の位置調整 */
+    width: 0;
+    height: 2px;
+    background-color: #A48166; /* ホバー時の下線色 */
+    transition: width 0.3s ease;
+}
+
+.global-nav .nav-links li a:hover::after {
+    width: 100%;
+}
+
+.global-nav .nav-cta-button {
+    background-color: #5a7d9a; /* メインCTAボタンの色を少し調整 (既存の#6689A4より若干落ち着いた色) */
+    color: #fff;
+    padding: 12px 24px; /* パディング調整 */
+    border-radius: 4px; /* 角を少し丸める */
+    font-weight: 600; /* 太さ調整 */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.global-nav .nav-cta-button:hover {
+    background-color: #4e6b86; /* ホバー時の色を少し濃く */
+    transform: translateY(-2px); /* 少し浮き上がる効果 */
+    text-decoration: none;
+    color: white;
+}
+
+/* General Styles */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #343a40; /* 基本テキスト色を濃いグレーに */
+    line-height: 1.7; /* 行間を広めに */
+    -webkit-font-smoothing: antialiased; /* フォントレンダリングの改善 */
+    -moz-osx-font-smoothing: grayscale;
+}
+.container {
+    max-width: 1160px; /* コンテナ幅を少し狭めて余白を強調 */
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2, h3, h4 { /* h4も追加 */
+    color: #2c3e50; /* 見出しの色を統一 */
+    margin-bottom: 24px; /* マージン調整 */
+    font-weight: 600; /* 見出しのデフォルトウェイト */
+    letter-spacing: 0.5px; /* 文字間 */
+}
+p {
+    margin-bottom: 16px; /* パラグラフのマージン調整 */
+    color: #495057; /* パラグラフのテキスト色 */
+}
+a {
+    color: #5a7d9a; /* リンク色をCTAに合わせる */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #A48166; /* ホバー色を統一 */
+    text-decoration: none; /* 下線は基本なし、必要なら個別設定 */
+}
+.button { /* 共通ボタンスタイル */
+    display: inline-block;
+    background-color: #5a7d9a;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-transform: none; /* 大文字化を解除し、より落ち着いた印象に */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.button:hover {
+    background-color: #4e6b86;
+    transform: translateY(-2px);
+    color: #fff;
+}
+.text-center {
+    text-align: center;
+}
+.section-spacing {
+    padding: 80px 0; /* セクション間の余白を増やす */
+}
+
+/* Three Core blogs - Section 1 */
+.core-blogs {
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: left; /* カード内テキストは左揃えに */
+}
+
+.core-blogs h3.text-center { /* セクションタイトル */
+    font-size: 2.2rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 1.5em; /* タイトルの下のマージン */
+}
+
+.core-blogs .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* minmax調整 */
+    gap: 30px; /* ギャップ調整 */
+    margin-top: 50px;
+}
+.blog-card {
+    background-color: #ffffff;
+    padding: 35px; /* パディングを増やす */
+    border-radius: 6px; /* 角丸を調整 */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07); /* シャドウを調整 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef; /* 薄いボーダーを追加 */
+}
+
+.blog-card:hover {
+    transform: translateY(-8px); /* ホバー時の動きを大きく */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* ホバー時のシャドウ */
+}
+
+.blog-card h4 {
+    font-size: 1.5em; /* サイズ調整 */
+    margin-bottom: 20px;
+    color: #343a40; /* h4の色 */
+    font-weight: 600;
+}
+
+.blog-card p, .blog-card ul li { /* pとliのテキスト色 */
+    color: #495057;
+    font-size: 0.95rem; /* フォントサイズを少し小さく、細かく */
+    line-height: 1.7;
+}
+
+.blog-card ul {
+    list-style: none;
+    padding-left: 0; /* パディングリセット */
+}
+.blog-card ul li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px; /* アイコン分のスペース */
+}
+.blog-card ul li:before {
+    content: '✓'; /* チェックマーク */
+    color: #5a7d9a; /* アイコン色をアクセントカラーに */
+    position: absolute;
+    left: 0;
+    top: 1px; /* 位置調整 */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+/* ロゴコンテナは一旦コメントアウト、必要であれば復活 */
+/* .logos-container { ... } */
+
+.blog-card a { /* LADへのリンクなど */
+    font-weight: 600;
+    color: #5a7d9a;
+}
+.blog-card a:hover {
+    color: #A48166;
+}
+
+/* ======== 全体レイアウト ======== */
+main {
+    background-color: #f8f9fa; /* 背景を少しグレーに */
+}
+
+.section-spacing {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* ======== ① 注目記事セクション ======== */
+.featured-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.featured-card-image {
+    flex-shrink: 0;
+    width: 50%;
+}
+
+.featured-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-card-content {
+    padding: 30px 40px;
+}
+.card-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #e7f3ff;
+    color: #007bff;
+    font-weight: 700;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+.featured-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+.featured-card-excerpt {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* 注目記事のレスポンシブ対応 */
+@media (max-width: 768px) {
+    .featured-card {
+        flex-direction: column;
+    }
+    .featured-card-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+/* ======== ② 新着記事一覧セクション ======== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.card-thumbnail img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.card-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e60012;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* ======== もっと見る機能のスタイル ======== */
+
+/* 初期状態で7番目以降のカードを非表示にする */
+.blog-card:nth-child(n + 7) {
+    display: none;
+}
+
+/* is-expandedクラスが付いたら、すべてのカードを表示する */
+.blog-grid.is-expanded .blog-card {
+    display: flex;
+}
+
+/* ボタンを中央に配置するためのコンテナ */
+.load-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+.button{
+    /* 既存のボタンスタイルがあれば不要です */
+    display: inline-block;
+    background-color: #5a7d9a;
+    color: #fff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #4e6b86;
+}
+
+/* ======== トップへ戻るボタンのスタイル ======== */
+.back-to-top-btn {
+    position: fixed; /* 画面に固定 */
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #333; /* 背景色 */
+    color: #fff; /* アイコンの色 */
+    border: none;
+    border-radius: 50%; /* 円形にする */
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    
+    /* 初期状態では非表示（透明で下に隠れている） */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* is-visibleクラスが付いたら表示する */
+.back-to-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background-color: #555; /* ホバー時の色 */
+}
