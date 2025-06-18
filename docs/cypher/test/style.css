@@ -24,3 +24,55 @@
 .hero-section a:hover {
     background-color: #4a6b85;
 }
+
+.value-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .value-section h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #2c3e50;
+  }
+  
+  .value-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 24px;
+    max-width: 320px;
+    text-align: left;
+  }
+  
+  .card h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 16px;
+  }
+  
+  .card p {
+    color: #495057;
+    margin-bottom: 12px;
+  }
+  
+  .card ul {
+    padding-left: 20px;
+    color: #495057;
+  }
+  
+  .card li {
+    margin-bottom: 8px;
+  }
+  
