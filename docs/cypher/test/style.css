@@ -1,0 +1,26 @@
+.hero-section h1{ 
+    color: #ff0000; /* 見出しの色 例として赤に指定*/
+    margin-bottom: 24px; /* マージン調整 */
+    font-weight: 600; /* 見出しのデフォルトウェイト */
+    letter-spacing: 0.5px; /* 文字間 */
+}
+
+.hero-section p{
+    margin-bottom: 16px; /* パラグラフのマージン調整 */
+    color: #495057; /* パラグラフのテキスト色 */
+}
+
+.hero-section a {
+    display: inline-block;
+    background-color: #5a7d9a;
+    color: #ffffff;
+    padding: 10px 0px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section a:hover {
+    background-color: #4a6b85;
+}
